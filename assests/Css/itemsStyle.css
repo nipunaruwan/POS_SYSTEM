@@ -1,0 +1,38 @@
+#button{
+    position: absolute;
+    right: 112px;
+    top: 197px;
+}
+.table{
+    position: absolute;
+    top: 256px;
+}
+h1{
+    position: absolute;
+    top: 149px;
+    right: 800px;
+}
+#text{
+    position: absolute;
+    top: 86px;
+    right: 243px;
+    left: 243px;
+}
+#itext1{
+ position: absolute;
+}
+#itext2{
+position: absolute;
+}
+#itext3{
+position: absolute;
+}
+#itext4{
+position: absolute;
+}
+img{
+    position: absolute;
+    top: 148px;
+    right: 753px;
+}
+

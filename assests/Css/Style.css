@@ -1,0 +1,50 @@
+#button{
+    position: absolute;
+    right: 1000px;
+    top: 197px;
+}
+.table{
+    position: absolute;
+    top: 256px;
+}
+h1{
+    position: absolute;
+    top: 6561px;
+    right: 893px;
+}
+#text{
+    position: absolute;
+    top: 86px;
+    right: 126px;
+ left: 243px;
+}
+#text1{
+    position: absolute;
+    right: 798px;
+    top: 66px;
+
+}
+#text2{
+    position: absolute;
+    right: 539px;
+    top: 66px;
+
+}
+#text3{
+    position: absolute;
+    right: 297px;
+    top: 66px
+
+}
+#text4{
+    position: absolute;
+    right: 45px;
+    top: 66px;
+
+}
+
+img {
+    position: absolute;
+    top: 76px;
+    right: 862px;
+}

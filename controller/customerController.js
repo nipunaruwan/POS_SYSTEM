@@ -3,6 +3,7 @@ $("#btnCustomerSave").click(function () {
     let alert = confirm("Do you want save");
     if (alert) {
         addCustomer();
+        loadAllCustomer();
     }
 });
 
@@ -17,4 +18,10 @@ function addCustomer() {
 
 }
 
-
+function loadAllCustomer() {
+$("#custablebody").empty();
+for(var i=0;i<customerDB.length;i++){
+    let row=`<tr><td>${customerDB[i].getID()}</td><td>${customerDB[i].getname()}</td><td>${customerDB[i].getaddress()}</td><td>${customerDB[i].getcontactno()}</td></tr>`;
+    $("#custablebody").append(row);
+    }
+}

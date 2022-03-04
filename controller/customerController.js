@@ -61,9 +61,25 @@ function SearchCustomer(id) {
             $("#txtCusID").val(customerDB[i].getID());
             $("#txtCusName").val(customerDB[i].getname());
             $("#txtaddress").val(customerDB[i].getaddress());
-            $("#txtCusID").val(customerDB[i].getcontactno());
+            $("#txtcontact").val(customerDB[i].getcontactno());
 
-         
+
+        }
+    }
+
+}
+$("#btnCustomerDelete").click(function () {
+    let alert3=confirm("Do you want to Delete");
+   if (alert3) {
+       DeleteCustomer();
+   }
+});
+function DeleteCustomer(id) {
+    var searchCustomer=$("#txtCusID").val();
+    for (var i=0; i<customerDB.length;i++){
+        if(customerDB[i].getID()==searchCustomer){
+            customerDB.splice(i, 1);
+            loadAllCustomer();
         }
     }
 

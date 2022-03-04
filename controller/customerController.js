@@ -50,3 +50,21 @@ function UpdateCustomer(CId) {
     }
 }
 
+
+$("#btnCustomerSearch").click(function () {
+var CustomerId=$("#txtCusID").val();
+    SearchCustomer(CustomerId);
+});
+function SearchCustomer(id) {
+    for (var i=0; i<customerDB.length;i++){
+        if (customerDB[i].getID()==id){
+            $("#txtCusID").val(customerDB[i].getID());
+            $("#txtCusName").val(customerDB[i].getname());
+            $("#txtaddress").val(customerDB[i].getaddress());
+            $("#txtCusID").val(customerDB[i].getcontactno());
+
+         
+        }
+    }
+
+}

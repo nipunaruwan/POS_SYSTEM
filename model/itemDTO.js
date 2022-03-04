@@ -1,37 +1,37 @@
-function itemDTO(Id,name,address,contactno) {
-    var customerID=Id;
-    var customerName=name;
-    var customerAddress=address;
-    var customerContact=contactno;
+function itemDTO(code,Itemname,Itemprice,ItemQty) {
+    var itemcode=code;
+    var itemname=Itemname;
+    var itemprice=Itemprice;
+    var itemQuantity=ItemQty;
 
-    this.getID=function () {
-        return customerID;
+    this.getCode=function () {
+        return itemcode;
     }
-    this.setID=function () {
-        customerID=Id;
-    }
-
-
-    this.getname=function () {
-        return customerName;
-    }
-    this.setname=function () {
-        customerName=name;
+    this.setCode=function () {
+        itemcode=code;
     }
 
 
-    this.getaddress=function () {
-        return customerAddress;
+    this.getName=function () {
+        return itemname;
     }
-    this.setaddress=function () {
-        customerAddress=address;
+    this.setName=function () {
+        itemname=Itemname;
     }
 
 
-    this.getcontactno=function () {
-        return customerContact;
+    this.getprice=function () {
+        return itemprice;
     }
-    this.setaddress=function () {
-        customerContact=contactno;
+    this.setprice=function () {
+        itemprice=Itemprice;
+    }
+
+
+    this.getQTY=function () {
+        return itemQuantity;
+    }
+    this.setQTY=function () {
+        itemQuantity=ItemQty;
     }
 }

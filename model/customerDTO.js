@@ -7,7 +7,7 @@ var customerContact=contactno;
   this.getID=function () {
      return customerID;
 }
-    this.setID=function () {
+    this.setID=function (Id) {
          customerID=Id;
     }
 
@@ -15,7 +15,7 @@ var customerContact=contactno;
     this.getname=function () {
         return customerName;
     }
-    this.setname=function () {
+    this.setname=function (name) {
        customerName=name;
     }
 
@@ -23,7 +23,7 @@ var customerContact=contactno;
     this.getaddress=function () {
         return customerAddress;
     }
-    this.setaddress=function () {
+    this.setaddress=function (address) {
         customerAddress=address;
     }
 
@@ -31,7 +31,7 @@ var customerContact=contactno;
     this.getcontactno=function () {
         return customerContact;
     }
-    this.setaddress=function () {
+    this.setcontactno=function (contactno) {
         customerContact=contactno;
     }
 }

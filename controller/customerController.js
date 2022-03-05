@@ -26,7 +26,7 @@ function loadAllCustomer() {
     }
 }
 
-
+/*......................update customer...................................*/
 $("#btnCustomerupdate").click(function () {
     let customerId = $("#txtCusID").val();
     UpdateCustomer(customerId);
@@ -50,7 +50,7 @@ function UpdateCustomer(CId) {
     }
 }
 
-
+/*......................search customer.................................*/
 $("#btnCustomerSearch").click(function () {
 var CustomerId=$("#txtCusID").val();
     SearchCustomer(CustomerId);
@@ -68,6 +68,8 @@ function SearchCustomer(id) {
     }
 
 }
+
+/*...........................delete customer......................*/
 $("#btnCustomerDelete").click(function () {
     let alert3=confirm("Do you want to Delete");
    if (alert3) {

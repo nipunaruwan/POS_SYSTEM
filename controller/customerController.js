@@ -86,3 +86,8 @@ function DeleteCustomer(id) {
     }
 
 }
+/*...........................other method......................*/
+function genCusID() {
+    
+
+}

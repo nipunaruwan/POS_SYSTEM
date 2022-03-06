@@ -25,3 +25,25 @@ function loadallitem() {
 
 }
 /*....................update customer.................................*/
+$("#btnCustomerupdate").click(function () {
+let itemcode =$("#txtitemcode").val();
+
+});
+function updateitem(itemcode) {
+    let code = $("#txtitemcode").val();
+    let Name = $("#txtitemname").val();
+    let price = $("#txtitemprice").val();
+    let Qty = $("#txtitemqty").val();
+
+
+    for (var i = 0; i < itemDB.length; i++) {
+        if (itemDB[i].getCode() == itemcode) {
+            itemDB[i].setCode(code);
+            itemDB[i].setName(Name);
+            itemDB[i].setprice(price);
+            itemDB[i].setQTY(Qty);
+
+            loadallitem();
+        }
+    }
+}

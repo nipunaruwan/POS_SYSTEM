@@ -70,18 +70,19 @@ function Deleteitem() {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*......................search customer.................................*/
+$("#btnitemSearch").click(function () {
+var itemcode=$("#txtitemcode").val();
+Searchitem(itemcode);
+});
+function Searchitem(code) {
+    for (var i = 0; i < itemDB.length; i++) {
+        if (itemDB[i].getCode() == code) {
+            $("#txtitemcode").val(itemDB[i].getCode());
+            $("#txtitemname").val(itemDB[i].getName());
+            $("#txtitemprice").val(itemDB[i].getprice());
+            $("#txtitemqty").val(itemDB[i].getQTY());
+        }
+
+    }
+}

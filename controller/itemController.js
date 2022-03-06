@@ -1,3 +1,9 @@
+$("#itempage").click(function () {
+genItemcode();
+});
+
+
+
 /*...............item save...........................*/
 $("#btnitemSave").click(function () {
  let alert=confirm("Do you want to save");
@@ -65,16 +71,18 @@ function Deleteitem() {
         if (itemDB[i].getCode()==searchitem){
             itemDB.splice(i,1);
             loadallitem();
+            genItemcode();
 
         }
     }
 
 }
 
-/*......................search customer.................................*/
+/*......................search item.................................*/
 $("#btnitemSearch").click(function () {
 var itemcode=$("#txtitemcode").val();
 Searchitem(itemcode);
+genItemcode();
 });
 function Searchitem(code) {
     for (var i = 0; i < itemDB.length; i++) {
@@ -89,10 +97,10 @@ function Searchitem(code) {
 }
 /*...........................other method......................*/
 function genItemcode() {
-    if (customerDB.length == 0) {
-        $("#txtitemcode").val("T00-0001");
-    } else if (customerDB.length > 0) {
-        var code = customerDB[customerDB.length - 1].getID().split("-")[1];
+    if (itemDB.length == 0) {
+        $("#txtitemcode").val("I00-0001");
+    } else if (itemDB.length > 0) {
+        var code = itemDB[itemDB.length - 1].getCode().split("-")[1];
         var tempCode = parseInt(code);
         tempCode = tempCode + 1;
         if (tempCode <= 9) {

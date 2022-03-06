@@ -50,3 +50,38 @@ function updateitem(itemcode) {
         }
     }
 }
+/*...........................delete item......................*/
+$("#btnitemdelete").click(function () {
+    let alert5=confirm("Do you want to Delete");
+    if (alert5) {
+        Deleteitem();
+    }
+
+});
+function Deleteitem() {
+    var searchitem=$("#txtitemcode").val();
+    for(var i=0; i<itemDB.length;i++){
+        if (itemDB[i].getCode()==searchitem){
+            itemDB.splice(i,1);
+            loadallitem();
+
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*......................search customer.................................*/

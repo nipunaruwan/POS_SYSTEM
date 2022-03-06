@@ -5,6 +5,7 @@ $("#btnitemSave").click(function () {
 additem();
 loadallitem();
  }
+ genItemcode();
 });
 function additem() {
 
@@ -85,4 +86,24 @@ function Searchitem(code) {
         }
 
     }
+}
+/*...........................other method......................*/
+function genItemcode() {
+    if (customerDB.length == 0) {
+        $("#txtitemcode").val("T00-0001");
+    } else if (customerDB.length > 0) {
+        var code = customerDB[customerDB.length - 1].getID().split("-")[1];
+        var tempCode = parseInt(code);
+        tempCode = tempCode + 1;
+        if (tempCode <= 9) {
+            $("#txtitemcode").val("I00-000" + tempCode);
+        } else if (tempCode <= 99) {
+            $("#txtitemcode").val("I00-00" + tempCode);
+        } else if (tempCode <= 999) {
+            $("#txtitemcode").val("I00-0" + tempCode);
+        } else if (tempCode <= 9999) {
+            $("#txtitemcode").val("I00-" + tempCode);
+        }
+    }
+
 }

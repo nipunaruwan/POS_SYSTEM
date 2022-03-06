@@ -1,3 +1,9 @@
+$("#Customerpage").click(function () {
+   genCusID();
+})
+
+
+
 /*....................................savecustomer........................*/
 $("#btnCustomerSave").click(function () {
     let alert = confirm("Do you want save");
@@ -5,6 +11,7 @@ $("#btnCustomerSave").click(function () {
         addCustomer();
         loadAllCustomer();
     }
+    genCusID();
 });
 
 function addCustomer() {
@@ -88,6 +95,21 @@ function DeleteCustomer(id) {
 }
 /*...........................other method......................*/
 function genCusID() {
-    
+    if (customerDB.length == 0) {
+        $("#txtCusID").val("C00-0001");
+    } else if (customerDB.length > 0) {
+        var code = customerDB[customerDB.length - 1].getID().split("-")[1];
+        var tempCode = parseInt(code);
+        tempCode = tempCode + 1;
+        if (tempCode <= 9) {
+            $("#txtCusID").val("C00-000" + tempCode);
+        } else if (tempCode <= 99) {
+            $("#txtCusID").val("C00-00" + tempCode);
+        } else if (tempCode <= 999) {
+            $("#txtCusID").val("C00-0" + tempCode);
+        } else if (tempCode <= 9999) {
+            $("#txtCusID").val("C00-" + tempCode);
+        }
+    }
 
 }

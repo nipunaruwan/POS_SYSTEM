@@ -1,8 +1,3 @@
-$("#Customerpage").click(function () {
-   genCusID();
-})
-
-
 
 /*....................................savecustomer........................*/
 $("#btnCustomerSave").click(function () {
@@ -37,6 +32,7 @@ function loadAllCustomer() {
 $("#btnCustomerupdate").click(function () {
     let customerId = $("#txtCusID").val();
     UpdateCustomer(customerId);
+    genCusID();
 });
 
 function UpdateCustomer(CId) {
@@ -89,6 +85,7 @@ function DeleteCustomer(id) {
         if(customerDB[i].getID()==searchCustomer){
             customerDB.splice(i, 1);
             loadAllCustomer();
+            genCusID();
         }
     }
 
@@ -113,3 +110,6 @@ function genCusID() {
     }
 
 }
+$("#Customerpage").click(function () {
+    genCusID();
+})

@@ -1,7 +1,3 @@
-$("#itempage").click(function () {
-genItemcode();
-});
-
 
 
 /*...............item save...........................*/
@@ -38,6 +34,7 @@ let itemcode =$("#txtitemcode").val();
 if (mg) {
     updateitem(itemcode);
 }
+genItemcode();
 });
 function updateitem(itemcode) {
     let code = $("#txtitemcode").val();
@@ -82,7 +79,7 @@ function Deleteitem() {
 $("#btnitemSearch").click(function () {
 var itemcode=$("#txtitemcode").val();
 Searchitem(itemcode);
-genItemcode();
+
 });
 function Searchitem(code) {
     for (var i = 0; i < itemDB.length; i++) {
@@ -115,3 +112,6 @@ function genItemcode() {
     }
 
 }
+$("#itempage").click(function () {
+    genItemcode();
+});

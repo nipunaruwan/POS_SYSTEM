@@ -7,7 +7,7 @@ function itemDTO(code,Itemname,Itemprice,ItemQty) {
     this.getCode=function () {
         return itemcode;
     }
-    this.setCode=function () {
+    this.setCode=function (code) {
         itemcode=code;
     }
 
@@ -15,7 +15,7 @@ function itemDTO(code,Itemname,Itemprice,ItemQty) {
     this.getName=function () {
         return itemname;
     }
-    this.setName=function () {
+    this.setName=function (Itemname) {
         itemname=Itemname;
     }
 
@@ -23,7 +23,7 @@ function itemDTO(code,Itemname,Itemprice,ItemQty) {
     this.getprice=function () {
         return itemprice;
     }
-    this.setprice=function () {
+    this.setprice=function (Itemprice) {
         itemprice=Itemprice;
     }
 
@@ -31,7 +31,7 @@ function itemDTO(code,Itemname,Itemprice,ItemQty) {
     this.getQTY=function () {
         return itemQuantity;
     }
-    this.setQTY=function () {
+    this.setQTY=function (ItemQty) {
         itemQuantity=ItemQty;
     }
 }

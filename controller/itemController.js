@@ -25,9 +25,12 @@ function loadallitem() {
 
 }
 /*....................update customer.................................*/
-$("#btnCustomerupdate").click(function () {
+$("#btnitemupdate").click(function () {
 let itemcode =$("#txtitemcode").val();
-
+    let mg = confirm("Do you want update");
+if (mg) {
+    updateitem(itemcode);
+}
 });
 function updateitem(itemcode) {
     let code = $("#txtitemcode").val();

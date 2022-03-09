@@ -151,36 +151,36 @@ $("#txtitemcode").on('keyup', function (eventOb) {
 
 });
 
-$("#txtCusName").on('keyup', function (eventOb) {
+$("#txtitemname").on('keyup', function (eventOb) {
     setButton();
     if (eventOb.key == "Enter") {
         checkIfValid();
     }
 });
 
-$("#txtaddress").on('keyup', function (eventOb) {
+$("#txtitemprice").on('keyup', function (eventOb) {
     setButton();
     if (eventOb.key == "Enter") {
         checkIfValid();
     }
 });
 
-$("#txtcontact").on('keyup', function (eventOb) {
+$("#txtitemqty").on('keyup', function (eventOb) {
     setButton();
     if (eventOb.key == "Enter") {
         checkIfValid();
     }
 });
 // focusing events end
-$("#btnCustomerSave").attr('disabled', true);
+$("#btnitemSave").attr('disabled', true);
 
 function clearAll() {
-    $('#txtCusID,#txtCusName,#txtaddress,#txtcontact').val("");
-    $('#txtCusID,#txtCusName,#txtaddress,#txtcontact').css('border', '2px solid #ced4da');
-    $('#txtCusID').focus();
-    $("#btnCustomerSave").attr('disabled', true);
+    $('#txtitemcode,#txtitemname,#txtitemprice,#txtitemqty').val("");
+    $('#txtitemcode,#txtitemname,#txtitemprice,#txtitemqty').css('border', '2px solid #ced4da');
+    $('#txtitemcode').focus();
+    $("#btnitemSave").attr('disabled', true);
     loadAllCustomer();
-    $("#lblcusid,#lblcusname,#lblcusaddress,#lblContact").text("");
+    $("#lblitemcode,#lblitemname,#lblitemprice,#lblitemqty").text("");
 }
 
 function formValid() {

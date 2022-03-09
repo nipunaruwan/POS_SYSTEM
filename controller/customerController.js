@@ -246,7 +246,7 @@ function checkIfValid() {
                     $("#txtCusSalary").focus();
                 }
             } else {
-                $("#txtCusAddress").focus();
+                $("#txtaddress").focus();
             }
         } else {
             $("#txtCusName").focus();
@@ -259,13 +259,13 @@ function checkIfValid() {
 function setButton() {
     let b = formValid();
     if (b) {
-        $("#").attr('disabled', false);
+        $("#btnCustomerSave").attr('disabled', false);
     } else {
         $("#btnCustomerSave").attr('disabled', true);
     }
 }
 
-$('#btnCustomer').click(function () {
+$('#btnCustomerSave').click(function () {
     checkIfValid();
 });
 

@@ -230,11 +230,11 @@ function checkIfValid() {
         $("#txtCusName").focus();
         var cusName = $("#txtCusName").val();
         if (cusNameRegEx.test(cusName)) {
-            $("#txtCusAddress").focus();
+            $("#txtaddress").focus();
             var cusAddress = $("#txtCusAddress").val();
             if (cusAddressRegEx.test(cusAddress)) {
-                $("#txtCusSalary").focus();
-                var cusSalary = $("#txtCusSalary").val();
+                $("#txtcontact").focus();
+                var cusSalary = $("#txtcontact").val();
                 var resp = cusSalaryRegEx.test(cusSalary);
                 if (resp) {
                     let res = confirm("Do you really need to add this Customer..?");
@@ -243,7 +243,7 @@ function checkIfValid() {
                         clearAll();
                     }
                 } else {
-                    $("#txtCusSalary").focus();
+                    $("#txtcontact").focus();
                 }
             } else {
                 $("#txtaddress").focus();

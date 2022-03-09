@@ -225,17 +225,17 @@ function formValid() {
 }
 
 function checkIfValid() {
-    var cusID = $("#tx").val();
-    if (cusIDRegEx.test(cusID)) {
+    var itemcode = $("#txtitemcode").val();
+    if (itemcodeRegEx.test(itemcode)) {
         $("#txtCusName").focus();
-        var cusName = $("#txtCusName").val();
-        if (cusNameRegEx.test(cusName)) {
+        var itemName = $("#txtitemname").val();
+        if (itemnameRegEx.test(itemName)) {
             $("#txtaddress").focus();
-            var cusAddress = $("#txtCusAddress").val();
-            if (cusAddressRegEx.test(cusAddress)) {
-                $("#txtcontact").focus();
-                var cusSalary = $("#txtcontact").val();
-                var resp = cusSalaryRegEx.test(cusSalary);
+            var itemprice = $("#txtitemprice").val();
+            if (itempriceRegEx.test(itemprice)) {
+                $("#txtitemprice").focus();
+                var itemQTY = $("#txtitemqty").val();
+                var resp = itemQtyRegEx.test(itemQTY);
                 if (resp) {
                     let res = confirm("Do you really need to add this Customer..?");
                     if (res) {
@@ -246,22 +246,22 @@ function checkIfValid() {
                     $("#txtcontact").focus();
                 }
             } else {
-                $("#txtaddress").focus();
+                $("#txtitemprice").focus();
             }
         } else {
-            $("#txtCusName").focus();
+            $("#txtitemname").focus();
         }
     } else {
-        $("#txtCusID").focus();
+        $("#txtitemqty").focus();
     }
 }
 
 function setButton() {
     let b = formValid();
     if (b) {
-        $("#btnCustomerSave").attr('disabled', false);
+        $("#btnitemSave").attr('disabled', false);
     } else {
-        $("#btnCustomerSave").attr('disabled', true);
+        $("#btnitemSave").attr('disabled', true);
     }
 }
 

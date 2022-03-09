@@ -184,12 +184,12 @@ function clearAll() {
 }
 
 function formValid() {
-    var cusID = $("#txtCusID").val();
-    $("#txtCusID").css('border', '2px solid green');
-    $("#lblcusid").text("");
-    if (cusIDRegEx.test(cusID)) {
-        var cusName = $("#txtCusName").val();
-        if (cusNameRegEx.test(cusName)) {
+    var itemcode = $("#txtitemcode").val();
+    $("#txtitemcode").css('border', '2px solid green');
+    $("#lblitemcode").text("");
+    if (itemcodeRegEx.test(itemcode)) {
+        var itemname = $("#txtCusName").val();
+        if (itemnameRegEx.test(itemname)) {
             $("#txtCusName").css('border', '2px solid green');
             $("#lblcusname").text("");
             var cusAddress = $("#txtaddress").val();

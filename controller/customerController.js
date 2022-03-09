@@ -116,10 +116,10 @@ $("#Customerpage").click(function () {
 })
 
 /*...........................customer validation......................*/
-const cusIDRegEx = /^(C00-)[0-9]{1,3}$/;
+const cusIDRegEx = /^(C00-)[0-9]{1,4}$/;
 const cusNameRegEx = /^[A-z ]{5,20}$/;
 const cusAddressRegEx = /^[0-9/A-z. ,]{7,}$/;
-const cusSalaryRegEx = /^[0-9]{1,}[.]?[0-9]{1,2}$/;
+const cusSalaryRegEx = /^[076][0-9]?$/;
 
 
 $('#txtCusID,#txtCusName,#txtaddress,#txtcontact').on('keydown', function (eventOb) {
@@ -204,7 +204,7 @@ function formValid() {
                     return true;
                 } else {
                     $("#txtcontact").css('border', '2px solid red');
-                    $("#lblContact").text("Cus Salary is a required field : Pattern 100.00 or 100");
+                    $("#lblContact").text("Cus Contact no is a required field : contact should be 10 number");
                     return false;
                 }
             } else {

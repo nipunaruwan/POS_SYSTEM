@@ -115,3 +115,5 @@ function genItemcode() {
 $("#itempage").click(function () {
     genItemcode();
 });
+
+

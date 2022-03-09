@@ -190,14 +190,14 @@ function formValid() {
     if (itemcodeRegEx.test(itemcode)) {
         var itemname = $("#txtCusName").val();
         if (itemnameRegEx.test(itemname)) {
-            $("#txtCusName").css('border', '2px solid green');
-            $("#lblcusname").text("");
-            var cusAddress = $("#txtaddress").val();
-            if (cusAddressRegEx.test(cusAddress)) {
-                var Contact = $("#txtcontact").val();
-                var resp = cusSalaryRegEx.test(Contact);
-                $("#txtaddress").css('border', '2px solid green');
-                $("#lblcusaddress").text("");
+            $("#txtitemname").css('border', '2px solid green');
+            $("#lblitemname").text("");
+            var itemprice = $("#txtitemprice").val();
+            if (itempriceRegEx.test(itemprice)) {
+                var itemQTY = $("#txtitemqty").val();
+                var resp = itemQtyRegEx.test(itemQTY);
+                $("#txtitemprice").css('border', '2px solid green');
+                $("#lblitemprice").text("");
                 if (resp) {
                     $("#txtcontact").css('border', '2px solid green');
                     $("#lblContact").text("");

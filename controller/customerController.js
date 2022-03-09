@@ -259,9 +259,9 @@ function checkIfValid() {
 function setButton() {
     let b = formValid();
     if (b) {
-        $("#btnCustomer").attr('disabled', false);
+        $("#btnCustomerSave").attr('disabled', false);
     } else {
-        $("#btnCustomer").attr('disabled', true);
+        $("#btnCustomerSave").attr('disabled', true);
     }
 }
 

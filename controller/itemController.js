@@ -122,3 +122,149 @@ const itemcodeRegEx = /^(I00-)[0-9]{1,4}$/;
 const itemnameRegEx = /^[A-z ]{5,20}$/;
 const itempriceRegEx = /^[0-9/A-z. ,]{7,}$/;
 const itemQtyRegEx = /^[076][0-9]?$/;
+$('#txtitemcode,#txtitemname,#txtitemprice,#txtitemqty').on('keydown', function (eventOb) {
+    if (eventOb.key == "Tab") {
+        eventOb.preventDefault(); // stop execution of the button
+    }
+});
+
+$('#txtitemcode,#txtitemname,#txtitemprice,#txtitemqty').on('blur', function () {
+    formValid();
+});
+
+//focusing events
+$("#txtitemcode").on('keyup', function (eventOb) {
+    setButton();
+    if (eventOb.key == "Enter") {
+        checkIfValid();
+    }
+
+    if (eventOb.key == "Control") {
+        var typedCustomerID = $("#txtCusID").val();
+        var srcCustomer = searchCustomerFromID(typedCustomerID);
+        $("#txtCusID").val(srcCustomer.getCustomerID());
+        $("#txtCusName").val(srcCustomer.getCustomerName());
+        $("#txtaddress").val(srcCustomer.getCustomerAddress());
+        $("#txtcontact").val(srcCustomer.getCustomerSalary());
+    }
+
+
+});
+
+$("#txtCusName").on('keyup', function (eventOb) {
+    setButton();
+    if (eventOb.key == "Enter") {
+        checkIfValid();
+    }
+});
+
+$("#txtaddress").on('keyup', function (eventOb) {
+    setButton();
+    if (eventOb.key == "Enter") {
+        checkIfValid();
+    }
+});
+
+$("#txtcontact").on('keyup', function (eventOb) {
+    setButton();
+    if (eventOb.key == "Enter") {
+        checkIfValid();
+    }
+});
+// focusing events end
+$("#btnCustomerSave").attr('disabled', true);
+
+function clearAll() {
+    $('#txtCusID,#txtCusName,#txtaddress,#txtcontact').val("");
+    $('#txtCusID,#txtCusName,#txtaddress,#txtcontact').css('border', '2px solid #ced4da');
+    $('#txtCusID').focus();
+    $("#btnCustomerSave").attr('disabled', true);
+    loadAllCustomer();
+    $("#lblcusid,#lblcusname,#lblcusaddress,#lblContact").text("");
+}
+
+function formValid() {
+    var cusID = $("#txtCusID").val();
+    $("#txtCusID").css('border', '2px solid green');
+    $("#lblcusid").text("");
+    if (cusIDRegEx.test(cusID)) {
+        var cusName = $("#txtCusName").val();
+        if (cusNameRegEx.test(cusName)) {
+            $("#txtCusName").css('border', '2px solid green');
+            $("#lblcusname").text("");
+            var cusAddress = $("#txtaddress").val();
+            if (cusAddressRegEx.test(cusAddress)) {
+                var Contact = $("#txtcontact").val();
+                var resp = cusSalaryRegEx.test(Contact);
+                $("#txtaddress").css('border', '2px solid green');
+                $("#lblcusaddress").text("");
+                if (resp) {
+                    $("#txtcontact").css('border', '2px solid green');
+                    $("#lblContact").text("");
+                    return true;
+                } else {
+                    $("#txtcontact").css('border', '2px solid red');
+                    $("#lblContact").text("Cus Contact no is a required field : contact should be 10 number");
+                    return false;
+                }
+            } else {
+                $("#txtaddress").css('border', '2px solid red');
+                $("#lblcusaddress").text("Cus Name is a required field : Mimum 7");
+                return false;
+            }
+        } else {
+            $("#txtCusName").css('border', '2px solid red');
+            $("#lblcusname").text("Cus Name is a required field : Mimimum 5, Max 20, Spaces Allowed");
+            return false;
+        }
+    } else {
+        $("#txtCusID").css('border', '2px solid red');
+        $("#lblcusid").text("Cus ID is a required field : Pattern C00-000");
+        return false;
+    }
+}
+
+function checkIfValid() {
+    var cusID = $("#txtCusID").val();
+    if (cusIDRegEx.test(cusID)) {
+        $("#txtCusName").focus();
+        var cusName = $("#txtCusName").val();
+        if (cusNameRegEx.test(cusName)) {
+            $("#txtaddress").focus();
+            var cusAddress = $("#txtCusAddress").val();
+            if (cusAddressRegEx.test(cusAddress)) {
+                $("#txtcontact").focus();
+                var cusSalary = $("#txtcontact").val();
+                var resp = cusSalaryRegEx.test(cusSalary);
+                if (resp) {
+                    let res = confirm("Do you really need to add this Customer..?");
+                    if (res) {
+                        saveCustomer();
+                        clearAll();
+                    }
+                } else {
+                    $("#txtcontact").focus();
+                }
+            } else {
+                $("#txtaddress").focus();
+            }
+        } else {
+            $("#txtCusName").focus();
+        }
+    } else {
+        $("#txtCusID").focus();
+    }
+}
+
+function setButton() {
+    let b = formValid();
+    if (b) {
+        $("#btnCustomerSave").attr('disabled', false);
+    } else {
+        $("#btnCustomerSave").attr('disabled', true);
+    }
+}
+
+$('#btnCustomerSave').click(function () {
+    checkIfValid();
+});

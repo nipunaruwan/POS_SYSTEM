@@ -214,12 +214,12 @@ function formValid() {
             }
         } else {
             $("#txtitemname").css('border', '2px solid red');
-            $("#lblitemname").text("Cus Name is a required field : Mimimum 5, Max 20, Spaces Allowed");
+            $("#lblitemname").text("item Name is a required field : Mimimum 5, Max 20, Spaces Allowed");
             return false;
         }
     } else {
         $("#txtitemcode").css('border', '2px solid red');
-        $("#lblitemcode").text("Cus ID is a required field : Pattern C00-000");
+        $("#lblitemcode").text("item code is a required field : Pattern C00-000");
         return false;
     }
 }
@@ -237,7 +237,7 @@ function checkIfValid() {
                 var itemQTY = $("#txtitemqty").val();
                 var resp = itemQtyRegEx.test(itemQTY);
                 if (resp) {
-                    let res = confirm("Do you really need to add this Customer..?");
+                    let res = confirm("Do you really need to add this item..?");
                     if (res) {
                         saveCustomer();
                         clearAll();
@@ -265,6 +265,6 @@ function setButton() {
     }
 }
 
-$('#btnCustomerSave').click(function () {
+$('#btnitemSave').click(function () {
     checkIfValid();
 });

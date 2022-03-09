@@ -117,3 +117,8 @@ $("#itempage").click(function () {
 });
 
 
+/*...........................customer validation......................*/
+const itemcodeRegEx = /^(I00-)[0-9]{1,4}$/;
+const itemnameRegEx = /^[A-z ]{5,20}$/;
+const itempriceRegEx = /^[0-9/A-z. ,]{7,}$/;
+const itemQtyRegEx = /^[076][0-9]?$/;

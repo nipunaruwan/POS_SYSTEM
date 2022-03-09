@@ -194,21 +194,21 @@ function formValid() {
             $("#lblcusname").text("");
             var cusAddress = $("#txtaddress").val();
             if (cusAddressRegEx.test(cusAddress)) {
-                var cusSalary = $("#txtCusSalary").val();
-                var resp = cusSalaryRegEx.test(cusSalary);
-                $("#txtCusAddress").css('border', '2px solid green');
+                var Contact = $("#txtcontact").val();
+                var resp = cusSalaryRegEx.test(Contact);
+                $("#txtaddress").css('border', '2px solid green');
                 $("#lblcusaddress").text("");
                 if (resp) {
-                    $("#txtCusSalary").css('border', '2px solid green');
-                    $("#lblcussalary").text("");
+                    $("#txtcontact").css('border', '2px solid green');
+                    $("#lblContact").text("");
                     return true;
                 } else {
-                    $("#txtCusSalary").css('border', '2px solid red');
-                    $("#lblcussalary").text("Cus Salary is a required field : Pattern 100.00 or 100");
+                    $("#txtcontact").css('border', '2px solid red');
+                    $("#lblContact").text("Cus Salary is a required field : Pattern 100.00 or 100");
                     return false;
                 }
             } else {
-                $("#txtCusAddress").css('border', '2px solid red');
+                $("#txtaddress").css('border', '2px solid red');
                 $("#lblcusaddress").text("Cus Name is a required field : Mimum 7");
                 return false;
             }
@@ -259,7 +259,7 @@ function checkIfValid() {
 function setButton() {
     let b = formValid();
     if (b) {
-        $("#btnCustomerSave").attr('disabled', false);
+        $("#").attr('disabled', false);
     } else {
         $("#btnCustomerSave").attr('disabled', true);
     }

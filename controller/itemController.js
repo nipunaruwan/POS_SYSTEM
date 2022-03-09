@@ -199,33 +199,33 @@ function formValid() {
                 $("#txtitemprice").css('border', '2px solid green');
                 $("#lblitemprice").text("");
                 if (resp) {
-                    $("#txtcontact").css('border', '2px solid green');
-                    $("#lblContact").text("");
+                    $("#txtitemqty").css('border', '2px solid green');
+                    $("#lblitemqty").text("");
                     return true;
                 } else {
-                    $("#txtcontact").css('border', '2px solid red');
-                    $("#lblContact").text("Cus Contact no is a required field : contact should be 10 number");
+                    $("#txtitemqty").css('border', '2px solid red');
+                    $("#lblitemqty").text("Cus Contact no is a required field : contact should be 10 number");
                     return false;
                 }
             } else {
-                $("#txtaddress").css('border', '2px solid red');
-                $("#lblcusaddress").text("Cus Name is a required field : Mimum 7");
+                $("#txtitemprice").css('border', '2px solid red');
+                $("#lblitemprice").text("Cus Name is a required field : Mimum 7");
                 return false;
             }
         } else {
-            $("#txtCusName").css('border', '2px solid red');
-            $("#lblcusname").text("Cus Name is a required field : Mimimum 5, Max 20, Spaces Allowed");
+            $("#txtitemname").css('border', '2px solid red');
+            $("#lblitemname").text("Cus Name is a required field : Mimimum 5, Max 20, Spaces Allowed");
             return false;
         }
     } else {
-        $("#txtCusID").css('border', '2px solid red');
-        $("#lblcusid").text("Cus ID is a required field : Pattern C00-000");
+        $("#txtitemcode").css('border', '2px solid red');
+        $("#lblitemcode").text("Cus ID is a required field : Pattern C00-000");
         return false;
     }
 }
 
 function checkIfValid() {
-    var cusID = $("#txtCusID").val();
+    var cusID = $("#tx").val();
     if (cusIDRegEx.test(cusID)) {
         $("#txtCusName").focus();
         var cusName = $("#txtCusName").val();

@@ -140,12 +140,12 @@ $("#txtitemcode").on('keyup', function (eventOb) {
     }
 
     if (eventOb.key == "Control") {
-        var typedCustomerID = $("#txtCusID").val();
+        var typedCustomerID = $("#txtitemcode").val();
         var srcCustomer = searchCustomerFromID(typedCustomerID);
-        $("#txtCusID").val(srcCustomer.getCustomerID());
-        $("#txtCusName").val(srcCustomer.getCustomerName());
-        $("#txtaddress").val(srcCustomer.getCustomerAddress());
-        $("#txtcontact").val(srcCustomer.getCustomerSalary());
+        $("#txtitemcode").val(srcCustomer.getCustomerID());
+        $("#txtitemname").val(srcCustomer.getCustomerName());
+        $("#txtitemprice").val(srcCustomer.getCustomerAddress());
+        $("#txtitemqty").val(srcCustomer.getCustomerSalary());
     }
 
 

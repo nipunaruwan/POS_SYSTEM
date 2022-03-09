@@ -118,10 +118,10 @@ $("#itempage").click(function () {
 
 
 /*...........................customer validation......................*/
-const itemcodeRegEx = /^(I00-)[0-9]{1,4}$/;
-const itemnameRegEx = /^[A-z ]{5,20}$/;
-const itempriceRegEx = /^[0-9/A-z. ,]{7,}$/;
-const itemQtyRegEx = /^[076][0-9]?$/;
+const itemcodeRegEx = /^(I00-)[0-9]{4}$/;
+const itemnameRegEx = /^[A-z 0-9.]{3,}$/;
+const itempriceRegEx = /^[0-9]{1,}([.][0-9]{2})?$/
+const itemQtyRegEx = /^[0-9]{1,5}$/;
 $('#txtitemcode,#txtitemname,#txtitemprice,#txtitemqty').on('keydown', function (eventOb) {
     if (eventOb.key == "Tab") {
         eventOb.preventDefault(); // stop execution of the button
@@ -188,7 +188,7 @@ function formValid() {
     $("#txtitemcode").css('border', '2px solid green');
     $("#lblitemcode").text("");
     if (itemcodeRegEx.test(itemcode)) {
-        var itemname = $("#txtCusName").val();
+        var itemname = $("#txtitemname").val();
         if (itemnameRegEx.test(itemname)) {
             $("#txtitemname").css('border', '2px solid green');
             $("#lblitemname").text("");
@@ -204,12 +204,12 @@ function formValid() {
                     return true;
                 } else {
                     $("#txtitemqty").css('border', '2px solid red');
-                    $("#lblitemqty").text("Cus Contact no is a required field : contact should be 10 number");
+                    $("#lblitemqty").text("itemQTY no is a required field : contact should be 10 number");
                     return false;
                 }
             } else {
                 $("#txtitemprice").css('border', '2px solid red');
-                $("#lblitemprice").text("Cus Name is a required field : Mimum 7");
+                $("#lblitemprice").text("item Name is a required field : Mimum 7");
                 return false;
             }
         } else {

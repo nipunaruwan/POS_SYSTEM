@@ -192,7 +192,7 @@ function formValid() {
         if (cusNameRegEx.test(cusName)) {
             $("#txtCusName").css('border', '2px solid green');
             $("#lblcusname").text("");
-            var cusAddress = $("#txtCusAddress").val();
+            var cusAddress = $("#txtaddress").val();
             if (cusAddressRegEx.test(cusAddress)) {
                 var cusSalary = $("#txtCusSalary").val();
                 var resp = cusSalaryRegEx.test(cusSalary);

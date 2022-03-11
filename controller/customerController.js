@@ -118,8 +118,8 @@ $("#Customerpage").click(function () {
 /*...........................customer validation......................*/
 const cusIDRegEx = /^(C00-)[0-9]{1,4}$/;
 const cusNameRegEx = /^[A-z ]{5,20}$/;
-const cusAddressRegEx = /^[0-9/A-z. ,]{7,}$/;
-const cusSalaryRegEx = /^[076][0-9]?$/;
+const cusAddressRegEx = /^[0-9/A-z.]{7,}$/;
+const cusSalaryRegEx = /^[076][0-9]$/;
 
 
 $('#txtCusID,#txtCusName,#txtaddress,#txtcontact').on('keydown', function (eventOb) {
@@ -172,7 +172,7 @@ $("#txtcontact").on('keyup', function (eventOb) {
     }
 });
 // focusing events end
-$("#btnCustomerSave").attr('disabled', true);
+$("#btnCustomerSave").attr('disabled', false);
 
 function clearAll() {
     $('#txtCusID,#txtCusName,#txtaddress,#txtcontact').val("");
@@ -209,12 +209,12 @@ function formValid() {
                 }
             } else {
                 $("#txtaddress").css('border', '2px solid red');
-                $("#lblcusaddress").text("Cus Name is a required field : Mimum 7");
+                $("#lblcusaddress").text("Cus Name is a required field : Minimum 7");
                 return false;
             }
         } else {
             $("#txtCusName").css('border', '2px solid red');
-            $("#lblcusname").text("Cus Name is a required field : Mimimum 5, Max 20, Spaces Allowed");
+            $("#lblcusname").text("Cus Name is a required field : Minimum 5, Max 20, Spaces Allowed");
             return false;
         }
     } else {
@@ -239,7 +239,7 @@ function checkIfValid() {
                 if (resp) {
                     let res = confirm("Do you really need to add this Customer..?");
                     if (res) {
-                        saveCustomer();
+                        addCustomer();
                         clearAll();
                     }
                 } else {
@@ -261,7 +261,7 @@ function setButton() {
     if (b) {
         $("#btnCustomerSave").attr('disabled', false);
     } else {
-        $("#btnCustomerSave").attr('disabled', true);
+        $("#btnCustomerSave").attr('disabled', false);
     }
 }
 

@@ -117,7 +117,7 @@ $("#itempage").click(function () {
 });
 
 
-/*...........................customer validation......................*/
+/*...........................item validation......................*/
 const itemcodeRegEx = /^(I00-)[0-9]{4}$/;
 const itemnameRegEx = /^[A-z 0-9.]{3,}$/;
 const itempriceRegEx = /^[0-9]{1,}([.][0-9]{2})?$/
@@ -140,12 +140,12 @@ $("#txtitemcode").on('keyup', function (eventOb) {
     }
 
     if (eventOb.key == "Control") {
-        var typedCustomerID = $("#txtitemcode").val();
-        var srcCustomer = searchCustomerFromID(typedCustomerID);
-        $("#txtitemcode").val(srcCustomer.getCustomerID());
-        $("#txtitemname").val(srcCustomer.getCustomerName());
-        $("#txtitemprice").val(srcCustomer.getCustomerAddress());
-        $("#txtitemqty").val(srcCustomer.getCustomerSalary());
+        var typeditemcode = $("#txtitemcode").val();
+        var srcitem = searchCustomerFromID(typeditemcode);
+        $("#txtitemcode").val(srcitem.getCode());
+        $("#txtitemname").val(srcitem.getName());
+        $("#txtitemprice").val(srcitem.g());
+        $("#txtitemqty").val(srcitem.getCustomerSalary());
     }
 
 

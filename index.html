@@ -63,13 +63,13 @@
                     <div class="col">
                         <caption>Order ID:</caption>
                         <form>
-                            <input class="form-control " type="text">
+                            <input class="form-control " type="text" id="txtOrderId">
                         </form>
                     </div>
                     <div class="col">
                         <caption>Order Date:</caption>
                         <form>
-                            <input class="form-control " type="text">
+                            <input class="form-control " type="text" id="txtOrderdate">
                         </form>
                     </div>
 
@@ -85,7 +85,7 @@
                     <div class="col">
                         <caption>Customer_ID:</caption>
                         <form>
-                            <input class="form-control " type="text">
+                            <input class="form-control " type="text" id="txtCustomeriD">
                         </form>
                     </div>
 
@@ -95,13 +95,13 @@
                     <div class="col">
                         <caption>Name:</caption>
                         <form>
-                            <input class="form-control " type="text">
+                            <input class="form-control " type="text" id="txtname">
                         </form>
                     </div>
                     <div class="col">
                         <caption>Salary:</caption>
                         <form>
-                            <input class="form-control " type="text">
+                            <input class="form-control " type="text" id="txtsalary">
                         </form>
                     </div>
 
@@ -111,7 +111,7 @@
                     <div class="col">
                         <caption>Address:</caption>
                         <form>
-                            <input class="form-control " type="text">
+                            <input class="form-control " type="text" id="txtorAddress">
                         </form>
                     </div>
                 </div>
@@ -129,13 +129,13 @@
                     <div class="col">
                         <caption>Item:</caption>
                         <form>
-                            <input class="form-control " type="text">
+                            <input class="form-control " type="text" id="txtorderItem">
                         </form>
                     </div>
                     <div class="col">
                         <caption>Item Code:</caption>
                         <form>
-                            <input class="form-control " type="text">
+                            <input class="form-control " type="text" id="txtordercode">
                         </form>
                     </div>
                 </div>
@@ -145,19 +145,19 @@
                     <div class="col">
                         <caption>Item Name:</caption>
                         <form>
-                            <input class="form-control " type="text">
+                            <input class="form-control " type="text" id="txtordername">
                         </form>
                     </div>
                     <div class="col">
                         <caption>Item Price:</caption>
                         <form>
-                            <input class="form-control " type="text">
+                            <input class="form-control " type="text" id="txtItemorderprice">
                         </form>
                     </div>
                     <div class="col">
                         <caption>QtyOnH:</caption>
                         <form>
-                            <input class="form-control " type="text">
+                            <input class="form-control " type="text" id="txtQTY">
                         </form>
                     </div>
 
@@ -168,7 +168,7 @@
                     <div class="col">
                         <caption>Order QTY:</caption>
                         <form>
-                            <input class="form-control " type="text">
+                            <input class="form-control " type="text" id="txtOrderQTY">
                         </form>
                     </div>
                 </div>
@@ -176,7 +176,7 @@
 
                 <div class="row">
                     <div class="col">
-                        <button class="btn btn-dark  mt-4">Add Item</button>
+                        <button class="btn btn-dark  mt-4" id="btnAdditem">Add Item</button>
                     </div>
                 </div>
             </section>
@@ -393,7 +393,9 @@
 <script src="db/DB.js"></script>
 <script src="model/customerDTO.js"></script>
 <script src="model/itemDTO.js"></script>
+<script src="model/OrderDTO.js"></script>
 <script src="controller/customerController.js"></script>
 <script src="controller/itemController.js"></script>
+<script src="controller/OrderController.js"></script>
 </body>
 </html>

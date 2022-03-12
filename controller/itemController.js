@@ -239,7 +239,7 @@ function checkIfValid() {
                 if (resp) {
                     let res = confirm("Do you really need to add this item..?");
                     if (res) {
-                        saveCustomer();
+                        additem();
                         clearAll();
                     }
                 } else {
@@ -265,6 +265,6 @@ function setButton() {
     }
 }
 
-$('#btnitemSave').click(function () {
+$("#btnitemSave").click(function () {
     checkIfValid();
 });

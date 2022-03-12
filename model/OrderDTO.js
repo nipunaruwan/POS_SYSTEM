@@ -1,30 +1,33 @@
-function itemDTO(code,Itemname,Itemprice,ItemQty) {
+/*
+function itemDTO(Item,Itemordercode,Itemoname,Itemorderprice,QtyorderonH,orderoty) {
    var item=Item;
    var itemordercode=Itemordercode;
-   var itemname=Itemprice;
-   var =ItemQty;
+   var itemordername=Itemoname;
+   var itemorderprice=Itemorderprice;
+   var QtyonH=QtyorderonH;
+   var orderot=orderoty;
 
-   this.getCode=function () {
-      return itemcode;
+   this.getItem=function () {
+      return item;
    }
-   this.setCode=function (code) {
-      itemcode=code;
-   }
-
-
-   this.getName=function () {
-      return itemname;
-   }
-   this.setName=function (Itemname) {
-      itemname=Itemname;
+   this.setItem=function (Item) {
+      item=Item;
    }
 
 
-   this.getprice=function () {
-      return itemprice;
+   this.getItemordercode=function () {
+      return itemordercode;
    }
-   this.setprice=function (Itemprice) {
-      itemprice=Itemprice;
+   this.setItemordercode=function (Itemordercode) {
+      itemordercode=Itemordercode;
+   }
+
+
+   this.getItemordername=function () {
+      return  itemordername;
+   }
+   this.setItemordername=function (QtyorderonH) {
+      QtyonH=QtyorderonH;
    }
 
 
@@ -34,4 +37,4 @@ function itemDTO(code,Itemname,Itemprice,ItemQty) {
    this.setQTY=function (ItemQty) {
       itemQuantity=ItemQty;
    }
-}
+}*/

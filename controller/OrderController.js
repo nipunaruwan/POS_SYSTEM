@@ -1,4 +1,5 @@
-/*...............order save...........................*/
+/*
+/!*...............order save...........................*!/
 
 $("#btnAdditem").click(function () {
     let alert=confirm("Do you want to add item");
@@ -22,3 +23,4 @@ function Addorder() {
 }
 
 
+*/

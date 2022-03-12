@@ -134,7 +134,7 @@ $('#txtCusID,#txtCusName,#txtaddress,#txtcontact').on('blur', function () {
 
 //focusing events
 $("#txtCusID").on('keyup', function (eventOb) {
-    setButton();
+    setButtonC();
     if (eventOb.key == "Enter") {
         checkIfValid();
     }
@@ -152,21 +152,21 @@ $("#txtCusID").on('keyup', function (eventOb) {
 });
 
 $("#txtCusName").on('keyup', function (eventOb) {
-    setButton();
+    setButtonC();
     if (eventOb.key == "Enter") {
         checkIfValid();
     }
 });
 
 $("#txtaddress").on('keyup', function (eventOb) {
-    setButton();
+    setButtonC();
     if (eventOb.key == "Enter") {
         checkIfValid();
     }
 });
 
 $("#txtcontact").on('keyup', function (eventOb) {
-    setButton();
+    setButtonC();
     if (eventOb.key == "Enter") {
         checkIfValid();
     }
@@ -174,7 +174,7 @@ $("#txtcontact").on('keyup', function (eventOb) {
 // focusing events end
 $("#btnCustomerSave").attr('disabled', false);
 
-function clearAll() {
+function clearAllCustomer() {
     $('#txtCusID,#txtCusName,#txtaddress,#txtcontact').val("");
     $('#txtCusID,#txtCusName,#txtaddress,#txtcontact').css('border', '2px solid #ced4da');
     $('#txtCusID').focus();
@@ -224,7 +224,7 @@ function formValid() {
     }
 }
 
-function checkIfValid() {
+function checkIfValidCustomer() {
     var cusID = $("#txtCusID").val();
     if (cusIDRegEx.test(cusID)) {
         $("#txtCusName").focus();
@@ -240,7 +240,7 @@ function checkIfValid() {
                     let res = confirm("Do you really need to add this Customer..?");
                     if (res) {
                         addCustomer();
-                        clearAll();
+                        clearAllCustomer();
                     }
                 } else {
                     $("#txtcontact").focus();
@@ -256,7 +256,7 @@ function checkIfValid() {
     }
 }
 
-function setButton() {
+function setButtonC() {
     let b = formValid();
     if (b) {
         $("#btnCustomerSave").attr('disabled', false);

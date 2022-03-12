@@ -237,8 +237,8 @@ function checkIfValidCustomer() {
                 var cusSalary = $("#txtcontact").val();
                 var resp = cusSalaryRegEx.test(cusSalary);
                 if (resp) {
-                    let res = confirm("Do you really need to add this Customer..?");
-                    if (res) {
+                    let resCus = confirm("Do you really need to add this Customer..?");
+                    if (resCus) {
                         addCustomer();
                         clearAllCustomer();
                     }
@@ -259,9 +259,9 @@ function checkIfValidCustomer() {
 function setButtonC() {
     let b = formValidCustomer();
     if (b) {
-        $("#btnCustomerSave").attr('disabled', true);
-    } else {
         $("#btnCustomerSave").attr('disabled', false);
+    } else {
+        $("#btnCustomerSave").attr('disabled', true);
     }
 }
 

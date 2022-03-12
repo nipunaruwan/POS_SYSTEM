@@ -145,7 +145,7 @@ $("#txtCusID").on('keyup', function (eventOb) {
         $("#txtCusID").val(srcCustomer.getCustomerID());
         $("#txtCusName").val(srcCustomer.getCustomerName());
         $("#txtaddress").val(srcCustomer.getCustomerAddress());
-        $("#txtcontact").val(srcCustomer.getCustomerSalary());
+        $("#txtcontact").val(srcCustomer.getCustomerContactno());
     }
 
 
@@ -266,7 +266,7 @@ function setButtonC() {
 }
 
 $('#btnCustomerSave').click(function () {
-    checkIfValid();
+    checkIfValidCustomer();
 });
 
 

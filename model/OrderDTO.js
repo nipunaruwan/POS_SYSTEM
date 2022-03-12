@@ -1,4 +1,3 @@
-/*
 function itemDTO(Item,Itemordercode,Itemoname,Itemorderprice,QtyorderonH,orderoty) {
    var item=Item;
    var itemordercode=Itemordercode;
@@ -37,4 +36,4 @@ function itemDTO(Item,Itemordercode,Itemoname,Itemorderprice,QtyorderonH,orderot
    this.setQTY=function (ItemQty) {
       itemQuantity=ItemQty;
    }
-}*/
+}

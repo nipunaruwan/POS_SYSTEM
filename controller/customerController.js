@@ -161,14 +161,14 @@ $("#txtCusName").on('keyup', function (eventOb) {
 $("#txtaddress").on('keyup', function (eventOb) {
     setButtonC();
     if (eventOb.key == "Enter") {
-        checkIfValid();
+        checkIfValidCustomer();
     }
 });
 
 $("#txtcontact").on('keyup', function (eventOb) {
     setButtonC();
     if (eventOb.key == "Enter") {
-        checkIfValid();
+        checkIfValidCustomer();
     }
 });
 // focusing events end
@@ -183,7 +183,7 @@ function clearAllCustomer() {
     $("#lblcusid,#lblcusname,#lblcusaddress,#lblContact").text("");
 }
 
-function formValid() {
+function formValidCustomer() {
     var cusID = $("#txtCusID").val();
     $("#txtCusID").css('border', '2px solid green');
     $("#lblcusid").text("");
@@ -257,9 +257,9 @@ function checkIfValidCustomer() {
 }
 
 function setButtonC() {
-    let b = formValid();
+    let b = formValidCustomer();
     if (b) {
-        $("#btnCustomerSave").attr('disabled', false);
+        $("#btnCustomerSave").attr('disabled', true);
     } else {
         $("#btnCustomerSave").attr('disabled', false);
     }
